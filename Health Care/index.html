@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Health Care</div>
+        <div class="hamburger">≡</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="home">
+        <h1>Welcome to Our Health Care</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <button type="button"><a href="#service">Book Appointment</a></button>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam quisquam beatae veniam sed ipsam distinctio asperiores, modi eum magnam maiores dicta, esse veritatis nulla rem, facilis deserunt. Voluptates exercitationem laborum quam libero asperiores facere harum in. Soluta nihil ducimus dolor aspernatur doloremque ratione illum nostrum fugit dolorem dignissimos odit perspiciatis ab ut labore nisi, quis consequatur sequi, obcaecati in quia ipsam totam accusamus! Unde, porro adipisci quos ullam neque ad nam ratione voluptas voluptate itaque nemo temporibus non inventore ex aperiam delectus dolores, distinctio dolor sit, quaerat architecto dolorem necessitatibus voluptates? Ratione adipisci ab perferendis quis natus. Natus iure at dicta eum ipsum sed, dignissimos necessitatibus animi magnam repudiandae voluptate quam ab molestias incidunt totam esse aut ullam sit ducimus quibusdam nobis debitis ipsam quisquam! Quae illum, itaque iste deleniti unde sed soluta aperiam deserunt ratione quibusdam, laborum magni, consequatur eaque nisi eos placeat fuga exercitationem consequuntur odit. Maiores odit ex doloremque, reiciendis molestias alias at officiis recusandae ipsam soluta. Exercitationem vero, illo hic reiciendis omnis maxime porro quae harum voluptates tempore nam debitis sunt magni totam explicabo, voluptate at quibusdam? Est aliquam error eius totam odit repellat natus minus voluptatibus. Ratione assumenda, dolorem illum rerum quis expedita molestias exercitationem fuga voluptatibus aspernatur labore quo! Fugit, quos aliquam magni molestias voluptas aliquid atque velit odit quasi sunt saepe, a earum consequuntur maxime hic minus beatae optio? Omnis tempora ullam, sed ipsam dolorem laudantium quia eaque quam, ut, numquam cumque. Mollitia ex aliquam ipsum hic deserunt nesciunt eveniet consequatur cum quis.</p>
+    </section>
+    <section id="service">
+        <h1>Service</h1>
+        <div class="items">
+            <div class="item">
+                <img src="s.png" alt="">
+                <h2>Surgeries</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+                <button type="button">Book Appointment</button>
+            </div>
+            <div class="item">
+                <img src="gc.png" alt="">
+                <h2>General Checkup</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <button type="button">Book Appointment</button>
+            </div>
+            <div class="item">
+                <img src="em.png" alt="">
+                <h2>Emergency Wards</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                <button type="button">Book Appointment</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form action="">
+            <label for="name">Name: <input type="text" name="" id="name" placeholder="Enter Your Name"></label>
+            <label for="email">Email Address: <input type="email" name="" id="email" placeholder="Enter Your Email Address"></label>
+            <label for="message">Message: <textarea name="" id="message" rows="5" placeholder="Enter Your Message Here..."></textarea></label>
+            <button type="submit">SEND</button>
+        </form>
+    </section>
+    <script>
+        let nav = document.querySelector("nav")
+        let toggle = document.querySelector(".hamburger")
+
+        toggle.addEventListener("click", function(){
+            nav.classList.toggle("active")
+        })
+        let links = document.querySelectorAll("nav ul li a").forEach(link =>{
+            link.addEventListener("click", function(){
+                nav.classList.remove("active")
+            })
+        })
+        document.querySelector("form").addEventListener("submit", function(e){
+            e.preventDefault()
+            let name = document.querySelector("#name")
+            let email = document.querySelector("#email")
+            let message = document.querySelector("#message")
+            if (name === "" ) {
+                alert("Please Enter Your Name")
+            }
+            if (email === "" ) {
+                alert("Please Enter Your Email Address")
+            }
+            if (message=== "" ) {
+                alert("Please Enter Your Message")
+            }
+            alert("🎉 Submitted Successfully! 🎉")
+            this.reset()
+        })
+        let hero = document.querySelector(".hero")
+        let imgs = ["gc.png","s.png","em.png"]
+        let index = 0 
+
+        imgs.forEach((src,i)=>{
+            let img = document.createElement("img")
+            img.src = src
+            if(i == 0)img.classList.add("active")
+            hero.appendChild(img)
+        })
+    let slides = document.querySelectorAll(".hero img")
+    setInterval(() => {
+        slides[index].classList.remove("active")
+        index = (index + 1)% imgs.length
+        slides[index].classList.add("active")
+    }, 2000);
+    </script>
+</body>
+</html>

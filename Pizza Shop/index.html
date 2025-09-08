@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Pizza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Delicious Pizza</div>
+        <div class="hamburger">≡</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="home">
+        <h1>Welcome to Delicious Pizza</h1>
+        <p>Fresh, Delicious & Filling Pizza Avaiable Here...</p>
+        <a href="#menu">Order Now</a>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum vel quas autem illum, totam earum? Ipsa
+            porro excepturi quisquam, molestiae officia ullam eum, corporis eligendi cupiditate alias necessitatibus,
+            libero nihil temporibus optio quis voluptatem qui repellat iure. Est architecto numquam fugiat ex soluta
+            voluptatibus quis distinctio sed delectus pariatur eaque perferendis voluptates totam, fugit consequuntur,
+            minima excepturi! Voluptas non fugiat nesciunt sequi! Deserunt libero fuga placeat obcaecati id! Temporibus
+            et nobis ab enim inventore quibusdam nostrum recusandae, tenetur perferendis dolor ipsa, illum numquam
+            delectus minus fuga autem reiciendis natus cum dicta nemo cupiditate consectetur vitae quis quaerat. Omnis
+            magnam obcaecati nam reprehenderit quos odit saepe, beatae eligendi voluptas ab iusto asperiores eaque est
+            corrupti exercitationem corporis itaque repellat commodi reiciendis natus maxime? Doloremque fuga
+            repudiandae maiores fugit voluptatem impedit ipsam tenetur, eius distinctio, dolor quam. Eveniet, cumque.
+            Ducimus qui dignissimos numquam nulla deserunt eveniet impedit, perspiciatis natus tenetur quibusdam eum
+            cupiditate neque rem explicabo dolor pariatur porro eaque. Soluta modi dolore maxime velit animi numquam
+            sunt vel! Nobis voluptatibus quo odio numquam eum dignissimos ipsum voluptas libero assumenda iusto amet
+            unde accusantium tempora dolores molestias atque, expedita, dolore, et est beatae. Consectetur, soluta fugit
+            excepturi accusamus necessitatibus dicta perspiciatis atque.</p>
+        <a href="#menu">Order Now</a>
+    </section>
+    <section id="menu">
+        <h1>Menu Card</h1>
+        <div class="items">
+            <div class="item">
+                <img src="pizza.png" alt="">
+                <h2>Margherita</h2>
+                <p>$10.2</p>
+                <button type="button">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="pizza.png" alt="">
+                <h2>Pepperoni</h2>
+                <p>$10.2</p>
+                <button type="button">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="pizza.png" alt="">
+                <h2>Cheese Pizza</h2>
+                <p>$10.2</p>
+                <button type="button">Order Now</button>
+            </div>
+        </div>
+    </section>
+    <section id="service">
+        <h1>Service</h1>
+        <div class="items">
+            <div class="item">
+                <img src="delivery.png" alt="">
+                <h2>Home Delivery</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="item">
+                <img src="parcel.png" alt="">
+                <h2>Take Away</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="item">
+                <img src="dining.png" alt="">
+                <h2>Dining</h2>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1>contact</h1>
+        <form action="">
+            <label for="name">Name:<input type="text" name="" id="name" placeholder="Enter Your Name"></label>
+            <label for="email">Email:<input type="text" name="" id="email"
+                    placeholder="Enter Your Email Address"></label>
+            <label for="message">Message:<textarea name="" id="message" rows="5"
+                    placeholder="Enter Your Message Here..."></textarea></label>
+
+            <button type="submit">SEND</button>
+        </form>
+
+    </section>
+    <footer>
+        &copy; 2025 Delicious Pizza. All Rights Reserved.
+    </footer>
+    <script>
+        let nav = document.querySelector("nav")
+        let toggle = document.querySelector(".hamburger").addEventListener("click", function () {
+            nav.classList.toggle("active")
+        })
+        let links = document.querySelectorAll("nav ul li a").forEach(link => {
+            link.addEventListener("click", function () {
+                nav.classList.remove("active")
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>

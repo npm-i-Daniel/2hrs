@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Fiber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Team Fiber</div>
+        <div class="hamburger">≡</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="home">
+        <h1>Welcome to Team Fiber Fitness Centre</h1>
+        <p>Stay Fit & Stay Strong</p>
+        <button type="button"><a href="#service">Join Now</a></button>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A magni doloribus assumenda, ratione quam eum amet magnam? Quas tempora quisquam quam quia dolorum! Quis veniam quae, eaque, velit dolores corrupti explicabo accusamus ratione expedita totam sed fugit architecto, itaque a quia! Et, architecto magnam, molestiae quam iure impedit, ullam dolorem nulla iste quae inventore soluta ipsam ipsa illo excepturi aperiam. Delectus deserunt qui dolores eos maiores tenetur ratione sequi id esse placeat eaque iste a, harum ea dolorum quidem atque unde aspernatur ullam enim quam facilis. Delectus dignissimos ab repudiandae nisi ipsum ullam sapiente. Consequuntur reprehenderit aspernatur inventore soluta! Aut, iusto officia dolor ad repellat alias, explicabo blanditiis perferendis unde eum eligendi, necessitatibus maxime quos qui error. Modi cum accusantium impedit quasi ex saepe quia temporibus, unde placeat quos nam, reprehenderit, illum asperiores suscipit ullam. Est, saepe! Perferendis distinctio rem velit dolor quae! Nobis libero iste vitae maxime tenetur repudiandae nemo maiores nesciunt, at optio esse! Odit mollitia, accusamus quae possimus quibusdam consequuntur doloribus inventore et dolore autem ad sed, modi dolores animi illum atque ratione. Provident nobis, ipsa nam aliquid reiciendis ullam id, consequuntur expedita quia enim sequi sunt pariatur in. Ratione obcaecati eius placeat nihil repudiandae, laudantium adipisci.</p>
+        <button type="button"><a href="#service">Check Out</a></button>
+    </section>
+    <section id="service">
+        <h1>Services</h1>
+        <div class="items">
+            <div class="item">
+                <img src="membership.png" alt="">
+                <h2>GYM Membership</h2>
+                <p>Per Month ₹1500</p>
+                <button type="button">Join Now</button>
+            </div>
+            <div class="item">
+                <img src="yoga.png" alt="">
+                <h2>YOGA</h2>
+                <p>Per Month ₹2000</p>
+                <button type="button">Join Now</button>
+            </div>
+            <div class="item">
+                <img src="personaltrainer.png" alt="">
+                <h2>Personal Trainer</h2>
+                <p>Per Month ₹2500</p>
+                <button type="button">Join Now</button>
+            </div>
+        </div>
+
+    </section>
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <form action="">
+            <label for="name">Name: <input type="text" name="" id="name" placeholder="Enter Your Name"></label>
+            <label for="email">Email Address: <input type="email" id="email" name=""
+                    placeholder="Enter Your Email Address"></label>
+            <label>Message: <textarea name="" rows="5" placeholder="Enter Your Message Here..."></textarea></label>
+            <button type="button">SEND</button>
+        </form>
+
+    </section>
+    <footer> &copy; 2025 Team Fiber. All Rights Reserved. </footer>
+    <script>
+        let nav = document.querySelector('nav')
+        let toggle = document.querySelector(".hamburger")
+
+        toggle.addEventListener("click", function(){
+            nav.classList.toggle('active')
+        })
+
+        let links = document.querySelectorAll("nav ul li a").forEach(link => {
+            link.addEventListener("click", function(){
+                nav.classList.remove('active')
+            })
+        })
+
+        // let home = document.querySelector("#home")
+        // let imgs = ["gym.png", "yogabg.png", "personaltrainingbg.png",]
+        // let index = 0;
+        // setInterval(() => {
+        //     index = (1 + index) % imgs.length
+        //     home.style.background = `url(${imgs[index]}) center/cover no-repeat`
+        //     home.style.transition = "3s"
+        // }, 3000);
+
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener("click", function(e){
+                e.preventDefault()
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior : "smooth"
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

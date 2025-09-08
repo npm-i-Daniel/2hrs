@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Tasty Kitchen</div>
+        <div class="hamburger">☰</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <section class="hero" id="home">
+        <h1 data-aos="fade-up">Welcome to Tasty Kitchen</h1>
+        <p data-aos="fade-up">Fresh, Hot & Spicy Foods Avaiable here...</p>
+        <button type="button" class="btn-hero" data-aos="fade-up"><a href="#menu">Order Now</a></button>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit minima, eos quidem est corrupti perspiciatis
+            aspernatur temporibus deleniti nesciunt distinctio amet labore eveniet praesentium molestiae rerum qui
+            laboriosam, a rem libero ab illum ad ipsa pariatur. Rerum ratione aut nemo, repellat ipsam voluptatibus
+            natus neque in earum debitis enim porro odit iure nobis doloribus consequatur repellendus reiciendis non sit
+            ducimus similique ad? Unde minima ipsum aperiam, asperiores labore exercitationem soluta! Nobis minus
+            corporis fugiat ut commodi beatae ea velit? Ex, nisi harum nulla laborum molestiae minima deserunt ipsum
+            quasi. Reiciendis aliquid maxime dignissimos! Optio velit hic reprehenderit vero, laboriosam rerum ipsum
+            similique consectetur sapiente necessitatibus esse fugit eum ut nulla temporibus voluptatibus, earum aliquid
+            pariatur, vitae repellat? Iure temporibus iusto distinctio tempora, sit numquam minima saepe est dolorum
+            dolore ut nostrum aspernatur. Quidem, eligendi nisi minus hic aut doloribus labore sapiente? Animi
+            accusantium enim non expedita officia consequuntur commodi eligendi reprehenderit esse tempore deleniti quam
+            corrupti sint magnam, maxime eius praesentium, nesciunt possimus dolor cum voluptates! Eligendi ut alias
+            quis neque nemo. Ipsum iste saepe at unde autem, illo natus voluptates ratione fugit a nesciunt inventore.
+            Doloribus, excepturi aspernatur aut sed delectus provident, eum voluptates, vitae tempore quam sint
+            assumenda!</p>
+        <button type="button"><a href="#menu">View Menu</a></button>
+    </section>
+    <section id="menu">
+        <h1>Menu Card</h1>
+        <div class="items">
+            <div class="item">
+                <img src="biryani.png" alt="">
+                <h3>Biryani</h3>
+                <p>240₹</p>
+                <button type="button" class="btn-hero">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="friedrice.png" alt="">
+                <h3>Fried Rice</h3>
+                <p>180₹</p>
+                <button type="button" class="btn-hero">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="tandoori.png" alt="">
+                <h3>Tandoori Chicken</h3>
+                <p>360₹</p>
+                <button type="button">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="butterchicken.png" alt="">
+                <h3>Butter Chicken</h3>
+                <p>150₹</p>
+                <button type="button">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="naan.png" alt="">
+                <h3>Naan</h3>
+                <p>70₹</p>
+                <button type="button">Order Now</button>
+            </div>
+            <div class="item">
+                <img src="parotta.png" alt="">
+                <h3>Parotta</h3>
+                <p>40₹</p>
+                <button type="button">Order Now</button>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h1>Contact</h1>
+        <form action="">
+            <label for="name">Name: <input
+                    type="text" name="" id="name" placeholder="Enter Your Name"></label>
+            <label for="email">Email Address : <input type="email" name="" id="email"
+                    placeholder="Enter Your Email Address"></label>
+            <label for="message">Message: <textarea name=""
+                    id="message" rows="5" placeholder="Enter Your Message Here..."></textarea></label>
+
+            <button type="submit"><a href="">SEND</a></button>
+        </form>
+    </section>
+    <footer> &copy; 2025 Tasty Kitchen. All Rights Reserved.</footer>
+    <script>
+        let nav = document.querySelector("nav")
+        let toggle = document.querySelector(".hamburger")
+
+        toggle.addEventListener("click", function () {
+            nav.classList.toggle('active')
+        })
+        
+        let links = document.querySelectorAll("nav ul li a").forEach(link => {
+            link.addEventListener("click", function(){
+                nav.classList.remove('active')
+            })
+        })
+
+        let hero = document.querySelector(".hero")
+        let imgs = ['bg1.png', "bg2.png", "bg3.png"]
+        let index = 0
+
+        setInterval(() => {
+            index = (1 + index) % imgs.length
+            hero.style.backgroundImage = `url(${imgs[index]})`
+            hero.style.transition = "0.3s ease-in-out"
+        }, 2000)
+
+        
+
+        // document.querySelectorAll('a[href^="#"]').forEach(a => {
+        //     a.addEventListener("click",function(e){
+        //         e.preventDefault();
+        //         document.querySelector(this.getAttribute("href")).scrollIntoView({
+        //             behavior: "smooth"
+        //         })
+        //     })
+        // })
+
+        document.querySelector("form").addEventListener("submit", function(e){
+            e.preventDefault();
+
+            let name = document.querySelector("#name").value.trim();
+            let email = document.querySelector("#email").value.trim();
+            let message = document.querySelector("#message").value.trim();
+
+            if(name === ""){
+                alert("Please Enter Your Name")
+                return;
+            }
+            if(email === ""){
+                alert("Please Enter Your Email Address")
+                return;
+            }
+            if(message === ""){
+                alert("Please Enter Your Message")
+                return;
+            }
+            alert(`🎉 Thank You For Contacting Us ${name} ! 🎉`)
+            this.reset()
+        })
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: false,
+            mirror: false
+        });
+    </script>
+</body>
+
+</html>
